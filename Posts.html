@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+    <link rel="stylesheet" href="styleHtml.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Skip Navigation Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="logo-container">
+            <img src="5aeddbac-fe10-4963-b319-239f6f44f9bf.png" alt="Mohamed Moustafa" class="logo">
+            <img src="WhatsApp Image 2025-09-07 at 00.56.22_af31050d.jpg" alt="Mohamed Moustafa" id="main">
+        </div>
+        <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-links">
+            <a href="https://mr-mohamed-moustafa.github.io/elmoustafa/" class="active">Home</a>
+            <a href="https://mr-mohamed-moustafa.github.io/elmoustafa/projects.html">Photos</a>
+            <a href="https://mr-mohamed-moustafa.github.io/elmoustafa/contact.html">Contact</a>
+            <a href="Posts.html">Posts</a>
+        </div>
+    </nav>
+<!-- <div class="video-container"> -->
+    <div>
+        <div>
+            <br>
+        </div>
+    </div>
+        <div class="video-wrapper">
+            <video id="myVideo" autoplay loop playsinline>
+            <source src="0917 (1).mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="controls">
+            <!-- <button class="play-pause" id="playPause"></button> -->
+            <div class="play-button" id="playButton"></div>
+        </div>
+</div>
+<!--Footer Section-->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/19cd4aKFDW/?mibextid=wwXIfr" aria-label="facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="mrmohamedmoustafa.m3011@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://api.whatsapp.com/send/?phone=1270152646&text&type=phone_number&app_absent=0"" aria-label="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            <p class="copyright">&copy; <span id="current-year"></span> Youssef Negm. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="index.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('myVideo');
+            const playButton = document.getElementById('playButton');
+            const copyButton = document.getElementById('copyBtn');
+            
+            // Play/Pause functionality
+            video.addEventListener('click', function() {
+                if (video.paused) {
+                    video.play();
+                    playPauseBtn.innerHTML = '||';
+                } else {
+                    video.pause();
+                    playPauseBtn.innerHTML = '▶';
+                }
+            });
+
+                    playButton.addEventListener('click', function() {
+            if (video.paused) {
+                video.play();
+                playButton.classList.add('playing');
+            } else {
+                video.pause();
+                playButton.classList.remove('playing');
+            }
+        });
+        
+        // Copy code functionality
+        copyButton.addEventListener('click', function() {
+            const code = document.querySelector('.code-content').textContent;
+            navigator.clipboard.writeText(code)
+                .then(() => {
+                    copyButton.textContent = 'Copied!';
+                    setTimeout(() => {
+                        copyButton.textContent = 'Copy Code';
+                    }, 2000);
+                })
+                .catch(err => {
+                    console.error('Failed to copy: ', err);
+                });
+        });
+        });
+    </script>
+</body>
+</html>
